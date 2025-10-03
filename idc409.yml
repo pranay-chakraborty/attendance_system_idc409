@@ -1,0 +1,11 @@
+name: idc409
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - numpy
+  - scipy
+  - opencv
+  - pip
+  - pip:
+    - opencv-contrib-python
