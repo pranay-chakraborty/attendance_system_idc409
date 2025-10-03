@@ -1,0 +1,1 @@
+1. starting with EDA - covariances and insights to further do statistical testing to arrive at the methods.
