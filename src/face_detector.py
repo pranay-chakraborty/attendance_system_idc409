@@ -23,7 +23,7 @@ def detect_faces(image):
     faces_rects = face_cascade.detectMultiScale(
         image, 
         scaleFactor=1.2, 
-        minNeighbors=4 # we took 4 for less strictness and more detections
+        minNeighbors=5
     )
     
     return faces_rects

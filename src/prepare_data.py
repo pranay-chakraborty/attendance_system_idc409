@@ -1,6 +1,6 @@
 import numpy as np
 from sklearn.model_selection import train_test_split
-from src.data_loader import load_face_data # Assuming you run from root
+from src.data_loader import load_face_data 
 
 def prepare_data(dataset_path='orl_faces', test_size=0.2, random_state=42):
     """
