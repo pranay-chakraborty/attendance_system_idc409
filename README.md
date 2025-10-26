@@ -34,7 +34,7 @@ We have mdae a separated module for grayscaling an input image, which could be u
 -  This heatmap shows which pixels vary the most across our entire dataset.
 -  The bright areas like eyes, nose, mouth, hair etc. are showing high variance, meaning that these areas are the most different. While the darker areas have low variance.
 
-<img width="342" height="178" alt="1761508182_grim" src="https://github.com/user-attachments/assets/bde0dae5-fc9b-452a-9758-cbd150ecdc36" />
+<img width="542" height="478" alt="1761508182_grim" src="https://github.com/user-attachments/assets/bde0dae5-fc9b-452a-9758-cbd150ecdc36" />
 
 xi = data value of x
 yi = data value of y
