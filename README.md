@@ -12,10 +12,46 @@ ___
 The face dataset used in this project is downloaded from the **ORL Database of Faces** https://cam-orl.co.uk/facedatabase.html. There are 40 different subject as samples with 10 images with varying lighting, facial angles and expressions. All the images were already grayscaled and were converted to `.pgm`.
 We have mdae a separated module for grayscaling an input image, which could be used for training the model for new faces separately and should be moved to the `/orl_faces/` for usage. This project mainly uses Eigenfaces and OpenCV algorithm to perform the recognition.
 
+### Approach & Insights from Exploratory Data Analysis
+#### 1. Mean Face
+- This is the average of all 400 faces in our dataset. It captures the general common features like head shape, average position of eyes/nose etc and averages out all the features unique to a person.
+<img width="300" height="300" alt="01_mean_face" src="https://github.com/user-attachments/assets/f57b2c48-eaa6-4b0b-8be7-5d19dd5df48a" />
+- This average face is subtracted from every single image to ensure the PCA algorithm only analyses the differences between faces, reducing the data size to be compared.
+
+#### 2. Variance Comparison
+<img width="450" height="400" alt="02_variance_comparison" src="https://github.com/user-attachments/assets/23225ed4-9d7e-4ba9-8975-e6dfb98abba9" />
+- This box plot compares the average `variance_between_different_people` to the `variance_within_multiple_pictures_of_same_person`
+- This proves that the differences between subjects are significantly larger than the differences within subject photos caused by different lighting or varying expressions. This analysis shows that the recognition is feasible with our dataset.
+
+#### 3. Pixel Variance as Heat Map
+<img width="300" alt="03_pixel_variance_heatmap" src="https://github.com/user-attachments/assets/6e24eeb2-1d2d-4ac7-86ff-f57c3bcefc2a" />
+-  This heatmap shows which pixels vary the most across our entire dataset.
+-  The bright areas like eyes, nose, mouth, hair etc. are showing high variance, meaning that these areas are the most different. While the darker areas have low variance.
+<img width="405" height="77" alt="Pasted image 20251027001825" src="https://github.com/user-attachments/assets/707c26bf-1cb1-4384-98c8-df58d4be436c" />
+xi = data value of x
+yi = data value of y
+![](data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==)
+x̄ = mean of x
+Ȳ = mean of y
+N = number of data values
+- During the covariance matrix calculation, these high-variance pixels will have the largest values in the matrix and will therefore dominate the principal components.
+
+#### 4. Scree Plot
+<img width="405" height="77" alt="Pasted image 20251027001825" src="https://github.com/user-attachments/assets/0a078960-6548-47e3-9f14-f82eb64ae00b" />
+- This plot shows the eigenvalues for each component. The y-axis shows the amount of variance 'explained' by each eigenvector.
+- **This shows that only a small proportion of eigenvectors hold a significant amount of variance**. 
+- As we can see, the first component alone explains 17% of variance. The 20 to 50 components captures vast majority of variances. Thus proving that we can reduce the dimensionality from 10,304 features to just ~100 without losing the necessary information.
+
+#### 4. Eigen Faces
+<img width="600" height="600" alt="05_eigenfaces" src="https://github.com/user-attachments/assets/bd68b7dd-563d-4cf9-9bb1-106950821062" />
+- Each of these ghostly looking faces is an eigenvector(a principal component). 
+- These eigenvectors forms our new basis set for our face space. 
+- The `eigenface 1` corresponds to the first, highest-variance capturing component (the highest variance red dot seen in scree plot). Later ones capture finer and more complex details.
+
 #### 1. Load Model
 Load a pre-trained `eigenface_model.yml` file which was created by `src.face_recognizer` script and contains:
-- **Mean Face** - A single average face computed from all faces in our training dataset
-- **The Eigenfaces** - A set of 'ghost-like' basis images. These represents the principal components of variation found across all training faces. 
+- **Mean Face**
+- **The Eigenfaces**
 - **The Projections** - is the set of weights for each of our trained subjects, mapping their face into the 'face space' defined by the Eigenfaces.
 ```# Create the recognizer object
 face_recognizer = cv2.face.EigenFaceRecognizer_create()
