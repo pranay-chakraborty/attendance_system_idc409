@@ -139,6 +139,7 @@ This script detects faces in images and extracts them as grayscale PGM files wit
 **Processed Face**
 
 <img width="200" height="200" alt="face_1" src="https://github.com/user-attachments/assets/00324644-3d43-4425-9ee4-b476d8564328" />
+
 ___
 
 ## Acknowledgements and References:
