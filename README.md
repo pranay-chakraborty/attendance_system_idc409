@@ -78,9 +78,11 @@ This script detects faces in images and extracts them as grayscale PGM files wit
 - The resizing is done in accordance with the optimum input preference for the model (app.py)
 
 **Detected Face**
+
 <img width="205" height="245" alt="Detected Faces (Green=original, Blue=expanded)_screenshot_26 10 2025" src="https://github.com/user-attachments/assets/f6dc3800-098a-42a3-8720-9ac56d1f72a4" />
 
 **Processed Face**
+
 <img width="200" height="200" alt="face_1" src="https://github.com/user-attachments/assets/00324644-3d43-4425-9ee4-b476d8564328" />
 
 
