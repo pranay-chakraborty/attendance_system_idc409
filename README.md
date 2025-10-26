@@ -36,3 +36,16 @@ For every face found.
 The code iterates through each bounding box found in the previous step:
 - The face is **cropped** from the grayscale image using the `(x, y, w, h)` coordinates.
 - The cropped image is **resized** to the exact dimensions required by the Eigenface model (e.g., `92x112`). This is critical, as PCA requires all inputs to have the same dimensions.
+
+#### 4. Face Recognition and Validation
+The pre-processed face is now ready for identification.
+
+- `label, confidence = face_recognizer.predict(resized_face)` This line performs the core recognition. It takes the resized face and **projects it into the "Face Space"** (using the loaded Mean Face and Eigenfaces).
+- It then **calculates the Euclidean distance** (returned as `confidence`) between this new face's projection and the stored projections of all known subjects.
+
+- It returns the `label` (e.g., "Subject 1") corresponding to the projection with the **smallest distance**.
+- `if confidence < RECOGNITION_THRESHOLD:` This is the validation step. The `confidence` (distance) is compared to a threshold. If the distance is small enough, the match is accepted. If it's too large, the face is "Unknown" because it's too far from any face in our training data.
+
+#### 5. Log and Annotate
+If the match is 'Unknown', it's logged as such. If it's a known `label`, the attendance is logged in a CSV file. A rectangle and the corresponding `label` (or Unknown) are drawn on the original image. This annotated image will then be displayed on the screen and also saved to disk.
+___
