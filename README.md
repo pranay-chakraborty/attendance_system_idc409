@@ -45,7 +45,7 @@ N = number of data values
 
 #### 4. Scree Plot
 
-<img width="300" height="360" alt="04_scree_plot" src="https://github.com/user-attachments/assets/52dbd85d-adfb-4ea5-8c22-e6348c8d1e34" />
+<img width="600" height="860" alt="04_scree_plot" src="https://github.com/user-attachments/assets/52dbd85d-adfb-4ea5-8c22-e6348c8d1e34" />
 
 - This plot shows the eigenvalues for each component. The y-axis shows the amount of variance 'explained' by each eigenvector.
 - **This shows that only a small proportion of eigenvectors hold a significant amount of variance**. 
