@@ -142,9 +142,6 @@ This script detects faces in images and extracts them as grayscale PGM files wit
 ___
 
 ## Acknowledgements and References:
-Here are the necessary references for your project, based on the algorithms, libraries, and datasets you've used.
-
-## Acknowledgements and References:
 
 _**Eigenfaces (PCA for Recognition):**  Turk, M., & Pentland, A. (1991). Eigenfaces for recognition. *Journal of Cognitive Neuroscience, 3*(1), 71-86._
 
