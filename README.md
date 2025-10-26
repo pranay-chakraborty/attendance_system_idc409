@@ -140,6 +140,19 @@ This script detects faces in images and extracts them as grayscale PGM files wit
 
 <img width="200" height="200" alt="face_1" src="https://github.com/user-attachments/assets/00324644-3d43-4425-9ee4-b476d8564328" />
 ___
+
+## Acknowledgements and References:
+Here are the necessary references for your project, based on the algorithms, libraries, and datasets you've used.
+
 ## Acknowledgements and References:
 
+_**Eigenfaces (PCA for Recognition):**  Turk, M., & Pentland, A. (1991). Eigenfaces for recognition. *Journal of Cognitive Neuroscience, 3*(1), 71-86._
+
+_**Haar Cascades (Face Detection):** Viola, P., & Jones, M. (2001). Rapid object detection using a boosted cascade of simple features. *In Proceedings of the 2001 IEEE Computer Society Conference on Computer Vision and Pattern Recognition (CVPR)*._
+
+_**The ORL Database of Faces:** AT&T Laboratories Cambridge. (1994). The ORL Database of Faces. (Available at: `https://cam-orl.co.uk/facedatabase.html`)_
+
+_**OpenCV (Open Source Computer Vision Library):** Bradski, G. (2000). The OpenCV Library. *Dr. Dobb's Journal of Software Tools*. (Official Site: `https://opencv.org`)_
+
+_**NumPy (Numerical Operations):** Harris, C. R., Millman, K. J., van der Walt, S. J., et al. (2020). Array programming with NumPy. *Nature, 585*, 357–362._
 
