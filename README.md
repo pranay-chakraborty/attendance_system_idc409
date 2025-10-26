@@ -100,8 +100,7 @@ The pre-processed face is now ready for identification.
 
 #### 5. Log and Annotate
 If the match is 'Unknown', it's logged as such. If it's a known `label`, the attendance is logged in a CSV file. A rectangle and the corresponding `label` (or Unknown) are drawn on the original image. This annotated image will then be displayed on the screen and also saved to disk.
-
-![IMG_20250524_142720138_annotated](https://github.com/user-attachments/assets/ef2aa43e-c70d-42dd-89d9-7daa956667cf)
+<img width="600" height="600" alt="05_eigenfaces" src="https://github.com/user-attachments/assets/ef2aa43e-c70d-42dd-89d9-7daa956667cf" />
 
 - Example of unrecognised face detection
 ___
