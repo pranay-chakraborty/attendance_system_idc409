@@ -49,3 +49,38 @@ The pre-processed face is now ready for identification.
 #### 5. Log and Annotate
 If the match is 'Unknown', it's logged as such. If it's a known `label`, the attendance is logged in a CSV file. A rectangle and the corresponding `label` (or Unknown) are drawn on the original image. This annotated image will then be displayed on the screen and also saved to disk.
 ___
+
+## Additional Modules
+
+## Input Dataprep Module
+This script detects faces in images and extracts them as grayscale PGM files with expanded bounding boxes (passport size) for cleaner input for the face recognition module's training.
+#### How it works
+1. **Loads image** from user-specified path 
+2. **Converts to grayscale** for face detection 
+3. **Detects faces** using Haar Cascade classifier 
+4. **Expands bounding box** by 25% (12.5% on each side) 
+5. **Extracts and saves** each face as PGM format 
+6. **Shows visual feedback** with color-coded rectangles
+- **Green** = Original face detection 
+- **Blue** = Expanded region (saved)
+#### Usage
+1. Install dependencies: `pip install -r requirements_conv.txt`
+2. Run `python Input_photo_to_pgm_converter.py`
+3. You will be prompted for the `path/to/image.jpg`
+	**Tip:** You can use: 
+- Full path: `/home/user/photos/group.jpg` 
+- Relative path: `images/photo.jpg` 
+- Home shortcut: `~/Pictures/photo.jpg`
+
+4. It will detect the face and enralges it to give a full face pgm converted output which can be used in the actual face recognition module.
+5. Here the face 
+- Displays the image with green boxes around detected faces
+- The resizing is done in accordance with the optimum input preference for the model (app.py)
+
+**Detected Face**
+<img width="205" height="245" alt="Detected Faces (Green=original, Blue=expanded)_screenshot_26 10 2025" src="https://github.com/user-attachments/assets/f6dc3800-098a-42a3-8720-9ac56d1f72a4" />
+
+**Processed Face**
+<img width="200" height="200" alt="face_1" src="https://github.com/user-attachments/assets/00324644-3d43-4425-9ee4-b476d8564328" />
+
+
