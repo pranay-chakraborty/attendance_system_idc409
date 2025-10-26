@@ -1,6 +1,7 @@
 ## Face Recognition Attendance System Using PCA and OpenCV
 This project is a command-line tool for taking attendance from a group photograph. It uses a two stage  process: first, it detects all faces in an image using Haar Cascades, and second, it identifies known individuals using a pre-trained Eigenfaces(PCA) model. Recognised faces are logged to a CSV as 'present', while logging the unrecognised ones as unknown.
 ___
+
 ### Installation
 1. Clone the repository: `git clone https://github.com/pranay-chakraborty/attendance_system_idc409.git`
 2. Install the required libraries: `pip install -r requirements.txt`
@@ -11,6 +12,7 @@ ___
 #### Dataset Used 
 The face dataset used in this project is downloaded from the **ORL Database of Faces** https://cam-orl.co.uk/facedatabase.html. There are 40 different subject as samples with 10 images with varying lighting, facial angles and expressions. All the images were already grayscaled and were converted to `.pgm`.
 We have mdae a separated module for grayscaling an input image, which could be used for training the model for new faces separately and should be moved to the `/orl_faces/` for usage. This project mainly uses Eigenfaces and OpenCV algorithm to perform the recognition.
+___
 
 ### Approach & Insights from Exploratory Data Analysis
 #### 1. Mean Face
@@ -58,6 +60,9 @@ N = number of data values
 - Each of these ghostly looking faces is an eigenvector(a principal component). 
 - These eigenvectors forms our new basis set for our face space. 
 - The `eigenface 1` corresponds to the first, highest-variance capturing component (the highest variance red dot seen in scree plot). Later ones capture finer and more complex details.
+___
+
+# Model Algorithm
 
 #### 1. Load Model
 Load a pre-trained `eigenface_model.yml` file which was created by `src.face_recognizer` script and contains:
@@ -95,6 +100,10 @@ The pre-processed face is now ready for identification.
 
 #### 5. Log and Annotate
 If the match is 'Unknown', it's logged as such. If it's a known `label`, the attendance is logged in a CSV file. A rectangle and the corresponding `label` (or Unknown) are drawn on the original image. This annotated image will then be displayed on the screen and also saved to disk.
+
+![IMG_20250524_142720138_annotated](https://github.com/user-attachments/assets/ef2aa43e-c70d-42dd-89d9-7daa956667cf)
+
+- Example of unrecognised face detection
 ___
 
 ## Additional Modules
@@ -131,5 +140,7 @@ This script detects faces in images and extracts them as grayscale PGM files wit
 **Processed Face**
 
 <img width="200" height="200" alt="face_1" src="https://github.com/user-attachments/assets/00324644-3d43-4425-9ee4-b476d8564328" />
+___
+## Acknowledgements and References:
 
 
