@@ -11,7 +11,7 @@ if (!dir.exists(output_dir)) {
 
 ## 1. Load Dataset - for 40 subjects with 10 image each
 
-load_face_dataset <- function(base_path = '/face-dataset/') {
+load_face_dataset <- function(base_path = 'face-dataset/') {
   sub_count <- 40
   img_persub <- 10
   img_ht <- 112
@@ -195,7 +195,7 @@ project_faces <- function(X_centered, eigenfaces, n_components = 100) {
 cat("Running PCA-EDA for Face Recognition...\n")
 
 # Run analysis
-dataset <- load_face_dataset('/face-dataset/')
+dataset <- load_face_dataset('face-dataset/')
 X <- dataset$X
 y <- dataset$y
 
