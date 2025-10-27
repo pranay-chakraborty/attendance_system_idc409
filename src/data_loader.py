@@ -4,7 +4,7 @@ import numpy as np
 
 TARGET_SIZE = (92, 112)
 
-def load_face_data(dataset_path='orl_faces'):
+def load_face_data(dataset_path='face-dataset'):
     faces = []
     labels = []
     abs_dataset_path = os.path.abspath(dataset_path)
