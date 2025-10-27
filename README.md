@@ -103,6 +103,34 @@ If the match is 'Unknown', it's logged as such. If it's a known `label`, the att
 <img width="600" height="600" alt="05_eigenfaces" src="https://github.com/user-attachments/assets/ef2aa43e-c70d-42dd-89d9-7daa956667cf" />
 
 - Example of unrecognised face detection
+## Model Validation
+#### 1. The model acheived a high and consistent average accuracy of 96.5% during 5-fold Cross-Validation.
+- Fold 1 = 96.25%
+- Fold 2 = 98.75%
+- Fold 3 = 97.50%
+- Fold 4 = 97.50%
+- Fold 5 = 92.50%
+#### 2. Confusion matrix: 
+
+![Confusion matrix](https://github.com/user-attachments/assets/2affc573-c4b7-4ba7-a03a-49826b61cebb)
+
+- Overall accuracy on a standard 80/20 split, the model achieved 96% accuracy.
+-  Excellent Performance: The model correctly identified the majority of subjects with perfect precision and recall.
+-  Specific Confusion: The model struggled with certain
+subjects, highlighting areas for future improvement.
+- Subject 10: Consistently misidentified (0% recall).
+- Subject 23: Occasionally predicted when the true subject
+was someone else (50% precision).
+- Subject 38: Correctly identified only half the time (50%
+recall).
+
+#### 3. Model performance via ROC curve analysis
+
+![ROC](https://github.com/user-attachments/assets/0bdd2184-0a88-4fe0-b31e-a7482dbfde33)
+
+This is a multi class one vs Rest ROC analysis, to show the ability of the model to distinguish a person from the rest.
+- We got a nearly perfect score of AUC = 0.98, meaning that the model is reliable and is an effective classifier.
+- The curve's position in the top-left corner visually confirms the model's **high True Positive Rate and Low False Positive Rate**.
 ___
 
 ## Additional Modules
