@@ -1,4 +1,5 @@
 import cv2
+import datetime
 import os
 import argparse
 from src.face_detector import detect_faces
@@ -48,6 +49,8 @@ def process_group_photo(image_path):
         else:
             display_text = "Unknown"
             color = (100, 100, 255)  # red
+            unknown_id = f"Unknown_{datetime.datetime.now().strftime('%H%M%S_%f')}"
+            logger.log(unknown_id)
 
         cv2.rectangle(image, (x, y), (x+w, y+h), color, 2)
         cv2.putText(image, display_text, (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.7, color, 2)
