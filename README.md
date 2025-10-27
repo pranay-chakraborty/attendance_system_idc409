@@ -111,7 +111,7 @@ If the match is 'Unknown', it's logged as such. If it's a known `label`, the att
 - Fold 4 = 97.50%
 - Fold 5 = 92.50%
 #### 2. Confusion matrix: 
-![Confusion matrix](https://github.com/user-attachments/assets/7e7232df-cd4c-4ef7-bf3c-d6374c1c348b){ width=600 }
+![Confusion matrix](https://github.com/user-attachments/assets/7e7232df-cd4c-4ef7-bf3c-d6374c1c348b)
 
 
 - Overall accuracy on a standard 80/20 split, the model achieved 96% accuracy.
@@ -126,7 +126,7 @@ recall).
 
 #### 3. Model performance via ROC curve analysis
 
-![ROC](https://github.com/user-attachments/assets/4dbdb46a-eb63-454d-a996-6cff4e79114d){ width=600 }
+![ROC](https://github.com/user-attachments/assets/4dbdb46a-eb63-454d-a996-6cff4e79114d)
 
 This is a multi class one vs Rest ROC analysis, to show the ability of the model to distinguish a person from the rest.
 - We got a nearly perfect score of AUC = 0.98, meaning that the model is reliable and is an effective classifier.
