@@ -1,5 +1,5 @@
 ## Face Recognition Attendance System Using PCA and OpenCV
-This project is a command-line tool for taking attendance from a group photograph. It uses a two stage  process: first, it detects all faces in an image using Haar Cascades, and second, it identifies known individuals using a pre-trained Eigenfaces(PCA) model. Recognised faces are logged to a CSV as 'present', while logging the unrecognised ones as unknown.
+This project is a command-line tool for face recognition(can be used for taking attendance) from individual photos or a group photograph. It uses a two stage  process: first, it detects all faces in an image using Haar Cascades, and second, it identifies known individuals using a pre-trained Eigenfaces(PCA) model. Recognised faces are logged to a CSV as 'present', while logging the unrecognised ones as unknown.
 ___
 
 ### Installation
