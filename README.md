@@ -168,6 +168,17 @@ This script detects faces in images and extracts them as grayscale PGM files wit
 
 <img width="200" height="200" alt="face_1" src="https://github.com/user-attachments/assets/00324644-3d43-4425-9ee4-b476d8564328" />
 
+### Limitations of Haar Cascade
+The Haar Cascade detector has certain limitations, such as the occurrence of false
+positives. (visible in demo)
+- The algorithm incorrectly identified one non-face objects as faces. These false
+detections appeared on patterned clothing and busy background elements (like the
+hats).
+- Reason is that it relies on simple light-and-dark features for detection. So textures
+or shadows in a complex scene can be mistaken for a face.
+- System can be improved by tuning detection parameters (like minNeighbours and
+minSize).
+
 ___
 
 ## Acknowledgements and References:
