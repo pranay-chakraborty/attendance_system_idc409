@@ -112,7 +112,8 @@ If the match is 'Unknown', it's logged as such. If it's a known `label`, the att
 - Fold 5 = 92.50%
 #### 2. Confusion matrix: 
 
-<img width="600" alt="face_1" src="[[https://github.com/user-attachments/assets/00324644-3d43-4425-9ee4-b476d8564328](https://github.com/user-attachments/assets/0bdd2184-0a88-4fe0-b31e-a7482dbfde33)](https://github.com/user-attachments/assets/2affc573-c4b7-4ba7-a03a-49826b61cebb)" />
+<img width="600" alt="face_1" src="![Confusion matrix](https://github.com/user-attachments/assets/7e7232df-cd4c-4ef7-bf3c-d6374c1c348b)"
+
 
 - Overall accuracy on a standard 80/20 split, the model achieved 96% accuracy.
 -  Excellent Performance: The model correctly identified the majority of subjects with perfect precision and recall.
